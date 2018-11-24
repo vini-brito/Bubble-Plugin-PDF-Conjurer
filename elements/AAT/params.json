@@ -1,0 +1,19 @@
+{
+    "add_is_visible": false,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 64,
+        "width": 64
+    },
+    "display": "PDF Model",
+    "edit_mode_image": "//s3.amazonaws.com/appforest_uf/f1542511932086x750023629050701800/scroll-unfurled%281a%29.png",
+    "fields": {
+        "ABi": {
+            "caption": "Congratulations! Now you can go to your workflow tab and set up a model to generate a PDF in this page. No need to do anything else with this element, also this element is invisible.",
+            "editor": "Label",
+            "name": "info",
+            "rank": 0
+        }
+    },
+    "icon": "ion-ios-list-outline"
+}

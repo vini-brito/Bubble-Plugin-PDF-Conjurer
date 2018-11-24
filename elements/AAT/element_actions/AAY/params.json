@@ -1,0 +1,15 @@
+{
+    "caption": "Conjure",
+    "doc": "Finally conjures the PDF.",
+    "fields": {
+        "AAr": {
+            "caption": "File name",
+            "default_val": "file",
+            "doc": "the file name that will be given to the pdf",
+            "editor": "DynamicValue",
+            "name": "file_name",
+            "rank": 0,
+            "value": "text"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "assets": {
+        "AAC": {
+            "name": "pdfmake",
+            "url": "//dd7tel2830j4w.cloudfront.net/f1534800763629x580757670570164900/pdfmake.js"
+        },
+        "AAD": {
+            "name": "vsf_fonts",
+            "url": "//dd7tel2830j4w.cloudfront.net/f1534800832340x651619495358318100/vfs_fonts.js"
+        }
+    },
+    "dependencies": {
+        "use_jquery": false
+    }
+}

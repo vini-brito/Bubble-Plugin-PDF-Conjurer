@@ -1,0 +1,12 @@
+{
+    "caption": "Test engine with",
+    "doc": "Simplest implementation possible, just to test if it works.",
+    "fields": {
+        "ABJ": {
+            "caption": "Test action with the simplest implementation possible, just to test if it works. Just trigger this with a click of a button and then go click that button in preview. It is supposed to offer to download or open a pdf with a small text inside it.",
+            "editor": "Label",
+            "name": "test_engine_for",
+            "rank": 0
+        }
+    }
+}

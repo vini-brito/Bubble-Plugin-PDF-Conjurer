@@ -1,0 +1,105 @@
+{
+    "caption": "Activate header",
+    "doc": "Activates the header element",
+    "fields": {
+        "AEx": {
+            "caption": "Show page number? (counter)",
+            "default_val": false,
+            "doc": "Check this box to have you pages numerated in the header. Below you can tell what pages you want the number to not show, for example you want the first page (possibly a cover) to not show the number one. ",
+            "editor": "Checkbox",
+            "name": "show_page_number",
+            "rank": 1
+        },
+        "AEy": {
+            "caption": "Start count on second page",
+            "default_val": false,
+            "doc": "Check this box if you want the second page to be numerated with 1 and the remaining pages follow this order.",
+            "editor": "Checkbox",
+            "name": "start_count_on_second_page",
+            "rank": 2
+        },
+        "AEz": {
+            "caption": "Counter alignment",
+            "default_val": "right",
+            "doc": "How you want the number to be aligned. Note that other elements in the header may influence this number's position, so it may not show where you expect alignment wise. \"Testing\" is your friend. Protip: If you use center and insert other elements in the header, make sure you're using an even (2, 4, 6 etc...) number of elements so the page count number will fall right in the middle of the elements.",
+            "editor": "Dropdown",
+            "name": "page_number_alignment",
+            "optional": true,
+            "options": "left,right,center",
+            "rank": 3
+        },
+        "AFA": {
+            "caption": "Hide counter on",
+            "doc": "Write here the page numbers you want the page count number not to show, like if you have a cover in the first page and want the number not to show, type 1. If you have several chapter covers (just an example) along your document and want them to not show the page count number, you may write the page numbers separated by comma, like this 1,3,5,10.",
+            "editor": "StaticText",
+            "name": "exclude_pages",
+            "optional": true,
+            "rank": 5
+        },
+        "AFB": {
+            "caption": "You can put elements in the header by checking the box at the element itself that says \"insert this element into header?\".",
+            "editor": "Label",
+            "name": "you_can_put_elements_in_the_header_by_checking_the_box_at_the_element_itself_that_says_\"insert_this_element_into_header?\".",
+            "rank": 0
+        },
+        "AFT": {
+            "caption": "Hide page number (counter) on specific pages?",
+            "default_val": false,
+            "doc": "Check this box if you want to specify below the pages you want the page number to not appear.",
+            "editor": "Checkbox",
+            "name": "use_exclude_pages",
+            "rank": 4
+        },
+        "AFU": {
+            "caption": "Page number margins",
+            "editor": "Label",
+            "name": "page_number_margins",
+            "rank": 8
+        },
+        "AFV": {
+            "caption": "Left margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "left_margin",
+            "rank": 9
+        },
+        "AFW": {
+            "caption": "Top margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "top_margin",
+            "rank": 10
+        },
+        "AFX": {
+            "caption": "Right margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "right_margin",
+            "rank": 11
+        },
+        "AFY": {
+            "caption": "Bottom margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "bottom_margin",
+            "rank": 12
+        },
+        "AFg": {
+            "caption": "Hide header elements on specific pages?",
+            "default_val": false,
+            "doc": "Check this box if you want to specify below the pages you want the elements (text, images and tables) you inserted into the header to not appear.",
+            "editor": "Checkbox",
+            "name": "use_exclude_elements_pages",
+            "optional": true,
+            "rank": 6
+        },
+        "AFh": {
+            "caption": "Hide elements on",
+            "doc": "Write here the page numbers you want the header elements (texts, images and tables) not to show, like if you have a cover in the first page and want the elements not to show there, type 1. If you have several chapter covers (just an example) along your document and want them to not show the header elements, you may write the page numbers separated by comma, like this 1,3,5,10. Note that if you started counting on second page, the first page of the pdf will be number zero (0).",
+            "editor": "StaticText",
+            "name": "exclude_elements_pages",
+            "optional": true,
+            "rank": 7
+        }
+    }
+}

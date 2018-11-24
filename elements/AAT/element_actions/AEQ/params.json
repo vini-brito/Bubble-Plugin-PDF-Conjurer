@@ -1,0 +1,119 @@
+{
+    "caption": "Insert image on",
+    "doc": "Inserts an image element.",
+    "fields": {
+        "AER": {
+            "caption": "Image file (see docs)",
+            "doc": "The image itself. Accepts \".jpg\" and \".png\" formats only. If you already uploaded or referenced this image in a previous step in this workflow, just type its name in the first field to reuse it, no need to upload again. Protip: Reusing the same image will not increase your pdf file size! So reuse without limits :D ",
+            "editor": "DynamicValue",
+            "name": "image_link",
+            "optional": true,
+            "rank": 1,
+            "value": "image"
+        },
+        "AES": {
+            "caption": "Image name",
+            "doc": "You must provide a name for the image, because it will be its reference. Next time you use this same image, only type its name, no need to input an image below.",
+            "editor": "StaticText",
+            "name": "image_name",
+            "rank": 0
+        },
+        "AEX": {
+            "caption": "Page break",
+            "default_val": "Unspecified",
+            "editor": "Dropdown",
+            "name": "page_break",
+            "options": "Unspecified,Before,After",
+            "rank": 2
+        },
+        "AEd": {
+            "caption": "Is this element being put into a Multi Column?",
+            "default_val": false,
+            "doc": "Mark this box if this element is between the Start and End of a multi column element.",
+            "editor": "Checkbox",
+            "name": "into_multi_column",
+            "rank": 5
+        },
+        "AEf": {
+            "caption": "Multi Column Name",
+            "doc": "The name of the multi column you're wrapping this element within.",
+            "editor": "StaticText",
+            "name": "multi_column_name",
+            "optional": true,
+            "rank": 6
+        },
+        "AEj": {
+            "caption": "Image width",
+            "doc": "You can leave these empty, then it will use the image's original size. Specify only width and the image will scale proportionaly, specify both width and height and the image will distort to fit.",
+            "editor": "StaticNumber",
+            "name": "image_width",
+            "optional": true,
+            "rank": 3
+        },
+        "AEk": {
+            "caption": "Image height",
+            "doc": "You can leave these empty, then it will use the image's original size. Specify only width and the image will scale proportionaly, specify both width and height and the image will distort to fit.",
+            "editor": "StaticNumber",
+            "name": "image_height",
+            "optional": true,
+            "rank": 4
+        },
+        "AFD": {
+            "caption": "Use image custom margins?",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "image_custom_margins",
+            "rank": 7
+        },
+        "AFE": {
+            "caption": "Below you will be able to set extra margins for your image element. Leave the box unchecked for a default display. (Will ignore any numbers below)",
+            "editor": "Label",
+            "name": "margin_info",
+            "rank": 8
+        },
+        "AFF": {
+            "caption": "Left Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "left_margin",
+            "rank": 9
+        },
+        "AFG": {
+            "caption": "Top Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "top_margin",
+            "rank": 10
+        },
+        "AFH": {
+            "caption": "Right Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "right_margin",
+            "rank": 11
+        },
+        "AFI": {
+            "caption": "Bottom Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "bottom_margin",
+            "rank": 12
+        },
+        "AFc": {
+            "caption": "Is this element being put into the footer?",
+            "default_val": false,
+            "doc": "Mark this box if this element is to be inserted into the footer.",
+            "editor": "Checkbox",
+            "name": "into_footer",
+            "rank": 13
+        },
+        "AFd": {
+            "caption": "Is this element being put into the header?",
+            "default_val": false,
+            "doc": "Mark this box if this element is to be inserted into the header.",
+            "editor": "Checkbox",
+            "name": "into_header",
+            "rank": 14
+        }
+    }
+}

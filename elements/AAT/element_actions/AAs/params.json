@@ -1,0 +1,65 @@
+{
+    "caption": "Start",
+    "doc": "Defines variables to be written upon.",
+    "fields": {
+        "AAz": {
+            "caption": "Page size",
+            "default_val": " A4 ",
+            "doc": "Sets the page size",
+            "editor": "Dropdown",
+            "name": "page_size",
+            "options": "4A0 , 2A0 , A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8 , A9 , A10 ,  B0 , B1 , B2 , B3 , B4 , B5 , B6 , B7 , B8 , B9 , B10 ,  C0 , C1 , C2 , C3 , C4 , C5 , C6 , C7 , C8 , C9 , C10 ,  RA0 , RA1 , RA2 , RA3 , RA4 ,  SRA0 , SRA1 , SRA2 , SRA3 , SRA4 ,  EXECUTIVE , FOLIO , LEGAL , LETTER , TABLOID ",
+            "rank": 0
+        },
+        "ABA": {
+            "caption": "Page orientation",
+            "default_val": "Portrait",
+            "doc": "Set the page orientation",
+            "editor": "Dropdown",
+            "name": "page_orientation",
+            "options": "Portrait,Landscape",
+            "rank": 1
+        },
+        "ABD": {
+            "caption": "Page margin left",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "page_margin_left",
+            "rank": 4
+        },
+        "ABE": {
+            "caption": "Below you will be able to set custom margin sizes for your page. Leave the box unchecked for default. (Will ignore any numbers below)",
+            "editor": "Label",
+            "name": "page_margin_info",
+            "rank": 3
+        },
+        "ABF": {
+            "caption": "Page margin top",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "page_margin_top",
+            "rank": 5
+        },
+        "ABG": {
+            "caption": "Page margin right",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "page_margin_right",
+            "rank": 6
+        },
+        "ABH": {
+            "caption": "Page margin bottom",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "page_margin_bottom",
+            "rank": 7
+        },
+        "ABL": {
+            "caption": "Set custom margins?",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "custom_margins",
+            "rank": 2
+        }
+    }
+}

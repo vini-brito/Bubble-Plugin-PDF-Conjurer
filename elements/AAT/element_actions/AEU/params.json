@@ -1,0 +1,13 @@
+{
+    "caption": "End multi column",
+    "doc": "Ends multi column",
+    "fields": {
+        "AEY": {
+            "caption": "Multi Column Name",
+            "doc": "This won't be shown in the pdf. Type in the multi column that you want to end here. Note that inserted elements must be between the Start and End actions. ",
+            "editor": "StaticText",
+            "name": "multiColumnName",
+            "rank": 0
+        }
+    }
+}

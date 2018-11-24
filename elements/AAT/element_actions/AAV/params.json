@@ -1,0 +1,116 @@
+{
+    "caption": "Create text on",
+    "doc": "Creates a text element.",
+    "fields": {
+        "AAW": {
+            "caption": "Text",
+            "doc": "Insert some text in the document.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "inputtedText",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAc": {
+            "caption": "Style",
+            "doc": "",
+            "editor": "StaticText",
+            "name": "textStyles",
+            "optional": true,
+            "rank": 1
+        },
+        "AAn": {
+            "caption": "Left Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "left_margin",
+            "rank": 4
+        },
+        "AAo": {
+            "caption": "Top Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "top_margin",
+            "rank": 5
+        },
+        "AAp": {
+            "caption": "Right Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "right_margin",
+            "rank": 6
+        },
+        "AAq": {
+            "caption": "Bottom Margin",
+            "default_val": 0,
+            "editor": "StaticNumber",
+            "name": "bottom_margin",
+            "rank": 7
+        },
+        "ABC": {
+            "caption": "Below you will be able to set extra margins for your text element. Leave the box unchecked for a default display. (Will ignore any numbers below)",
+            "editor": "Label",
+            "name": "margin_info",
+            "rank": 3
+        },
+        "ABM": {
+            "caption": "Use text custom margins?",
+            "default_val": false,
+            "doc": "",
+            "editor": "Checkbox",
+            "name": "text_custom_margins",
+            "rank": 2
+        },
+        "AEP": {
+            "caption": "Page break",
+            "default_val": "Unspecified",
+            "doc": "Choose if this element will try to enforce a new page before or after itself.",
+            "editor": "Dropdown",
+            "name": "page_break",
+            "options": "Unspecified,Before,After",
+            "rank": 8
+        },
+        "AEa": {
+            "caption": "Is this element being put into a Multi Column?",
+            "default_val": false,
+            "doc": "Mark this box if this element is between the Start and End of a multi column element.",
+            "editor": "Checkbox",
+            "name": "into_multi_column",
+            "rank": 9
+        },
+        "AEb": {
+            "caption": "This Column's Width",
+            "default_val": "Fit available space",
+            "doc": "Fit content will make the column have the width of their content. Fit available space will extend the column's width to all horizontal avaliable space in the page.",
+            "editor": "Dropdown",
+            "name": "this_column_width",
+            "optional": true,
+            "options": "Fit available space,Fit content",
+            "rank": 10
+        },
+        "AEc": {
+            "caption": "Multi Column Name",
+            "doc": "The name of the multi column you're wrapping this element within.",
+            "editor": "StaticText",
+            "name": "multi_column_name",
+            "optional": true,
+            "rank": 11
+        },
+        "AFS": {
+            "caption": "Is this element being put into the footer?",
+            "default_val": false,
+            "doc": "Mark this box if this element is to be inserted into the footer.",
+            "editor": "Checkbox",
+            "name": "into_footer",
+            "rank": 12
+        },
+        "AFZ": {
+            "caption": "Is this element being put into the header?",
+            "default_val": false,
+            "doc": "Mark this box if this element is to be inserted into the header.",
+            "editor": "Checkbox",
+            "name": "into_header",
+            "rank": 13
+        }
+    }
+}
