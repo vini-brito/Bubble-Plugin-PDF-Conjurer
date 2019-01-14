@@ -1,146 +1,98 @@
 function(instance, properties, context) {
   
-// this returns an array holding the list of whatever bubble holds. Texts, number, Thing. Things are sent as objects.
+// this returns an array holding the list of whatever bubble holds. Texts and numbers are rendered, other types like Date are converted to text.
 let getList = (columnXBasicReference, startPosition, finishPosition) => {
   let returnedList = columnXBasicReference.get(startPosition, finishPosition);
    return returnedList;
 	}	
 
-// these functions serve to look into the 1st element of an array to judge if it's a list of things or not. Call them with isListOfThings(appMakerEnteredList) and passing a list (array) as argument.
-let grabArrayWithFirstElement = (columnXBasicReference) => {
-	return getList(columnXBasicReference, 0, 1);
-}
-
-let checkIsListOfThings = (columnXBasicReference) => { 
-	if ( typeof grabArrayWithFirstElement(columnXBasicReference)[0] === "object" && grabArrayWithFirstElement(columnXBasicReference)[0] !== null ) {
-      
-			  return true;
-  }	else  { 
-	return false;
-  }
-	
-}
-
-// This extracts a field value from every thing in a list of things and stores them into an array of texts and/or number , 
-
-let extractValueFromThingInlist = (element, fieldPositionXColumn) => {
-			let fieldPosition = fieldPositionXColumn - 1; // since JS is zero indexed, we need to adapt the number 			
-			let listOfProperties = element.listProperties(); // captures the name of each property the Thing has into an array of texts	
-			let chosenPropertyName = listOfProperties[fieldPosition]; // a string that is the name of the property chosen		
-  			let grabbedValue = element.get(chosenPropertyName); // grabs the value of the field (text, number, boolean, date, etc)
-	    
-			let turnGrabbedValueIntoText = (grabbed) => {              
-            	    if (typeof grabbed !== "string" && typeof grabbed !== "number") {
-        		return grabbed.toString()
-                  	       }
-            	  	else {
-					 return grabbed
-               	  }                             
-				}
-				
-			let grabbedValueFormattedAsText = turnGrabbedValueIntoText(grabbedValue); 
-			return grabbedValueFormattedAsText;
-}  	
-
- 
-// listOfExtractedValues will become an array of texts or numbers extracted from each Thing
-	
-// this sees if it is a list of thing or of text/numbers and if it is a list of thing will extract a field's value from every thing in that list of thing and return as a new array 
-// else, returns list of texts or numbers into a new array
-let listOfWhatWillDeclare = (columnXBasicReference, fieldPositionXColumn, acquiredListXColumn) => {
-	if (checkIsListOfThings(columnXBasicReference) === true) {
-	return acquiredListXColumn.map(function(element) { return extractValueFromThingInlist(element, fieldPositionXColumn); });
-	} else {
-	return acquiredListXColumn;
-	}
-}
-
-let listLoader = (columnBasicReference, columnLengthFunction, fieldPositionColumn) => {
+// this is to load data from Bubble's server.
+let listLoader = (columnBasicReference, columnLengthFunction) => {
 	// grab the column array
 	let acquiredListColumn = getList(columnBasicReference, 0, columnLengthFunction); 	
-	// extract its value's if needed (in case it's a list of things)
-	return listOfWhatWillDeclare(columnBasicReference, fieldPositionColumn, acquiredListColumn);
+	// return it
+	return acquiredListColumn;
 }
 
 // now on to load the data by getting columns sent by the app maker
-let listOfExtractedValuesFirstColumn = listLoader(properties.first_column, properties.first_column.length(), properties.field_position_first_column);
+// writing to instance.data to make sure multiple PDF models running at the same time won't override each other, previously I was using "var". Unsure if "var" is properly isolated.
+instance.data.listOfExtractedValuesFirstColumn = listLoader(properties.first_column, properties.first_column.length());
 
 // these are inside an "if" because trying anything other than this will cause problems due to not always the app maker will send properties.second_column for example, by not using that column  
 if (properties.use_second_column) {
-   // var keyword because of scope, let keyword apparently won't be available out of here.
-    var listOfExtractedValuesSecondColumn = listLoader(properties.second_column, properties.second_column.length(), properties.field_position_second_column); 
+    instance.data.listOfExtractedValuesSecondColumn = listLoader(properties.second_column, properties.second_column.length()); 
 }  
   
 if (properties.use_third_column) {
-    var listOfExtractedValuesThirdColumn = listLoader(properties.third_column, properties.third_column.length(), properties.field_position_third_column);
+    instance.data.listOfExtractedValuesThirdColumn = listLoader(properties.third_column, properties.third_column.length());
 }
   
 if (properties.use_fourth_column) {
-    var listOfExtractedValuesFourthColumn = listLoader(properties.fourth_column, properties.fourth_column.length(), properties.field_position_fourth_column);
+    instance.data.listOfExtractedValuesFourthColumn = listLoader(properties.fourth_column, properties.fourth_column.length());
 }  
   
 if (properties.use_fifth_column) {
-    var listOfExtractedValuesFifthColumn = listLoader(properties.fifth_column, properties.fifth_column.length(), properties.field_position_fifth_column);
+    instance.data.listOfExtractedValuesFifthColumn = listLoader(properties.fifth_column, properties.fifth_column.length());
 }
   
 if (properties.use_sixth_column) {
-    var listOfExtractedValuesSixthColumn = listLoader(properties.sixth_column, properties.sixth_column.length(), properties.field_position_sixth_column);
+    instance.data.listOfExtractedValuesSixthColumn = listLoader(properties.sixth_column, properties.sixth_column.length());
 }
  
 if (properties.use_seventh_column) {
-    var listOfExtractedValuesSeventhColumn = listLoader(properties.seventh_column, properties.seventh_column.length(), properties.field_position_seventh_column);
+    instance.data.listOfExtractedValuesSeventhColumn = listLoader(properties.seventh_column, properties.seventh_column.length());
 }
 
 if (properties.use_eighth_column) {
-    var listOfExtractedValuesEighthColumn = listLoader(properties.eighth_column, properties.eighth_column.length(), properties.field_position_eighth_column);
+    instance.data.listOfExtractedValuesEighthColumn = listLoader(properties.eighth_column, properties.eighth_column.length());
 }  
   
 if (properties.use_ninth_column) {
-    var listOfExtractedValuesNinthColumn = listLoader(properties.ninth_column, properties.ninth_column.length(), properties.field_position_ninth_column);
+    instance.data.listOfExtractedValuesNinthColumn = listLoader(properties.ninth_column, properties.ninth_column.length());
 }   
   
 if (properties.use_tenth_column) {
-    var listOfExtractedValuesTenthColumn = listLoader(properties.tenth_column, properties.tenth_column.length(), properties.field_position_tenth_column);
+    instance.data.listOfExtractedValuesTenthColumn = listLoader(properties.tenth_column, properties.tenth_column.length());
 }   
   
 if (properties.use_eleventh_column) {
-    var listOfExtractedValuesEleventhColumn = listLoader(properties.eleventh_column, properties.eleventh_column.length(), properties.field_position_eleventh_column);
+    instance.data.listOfExtractedValuesEleventhColumn = listLoader(properties.eleventh_column, properties.eleventh_column.length());
 }   
   
 if (properties.use_twelfth_column) {
-    var listOfExtractedValuesTwelfthColumn = listLoader(properties.twelfth_column, properties.twelfth_column.length(), properties.field_position_twelfth_column);
+    instance.data.listOfExtractedValuesTwelfthColumn = listLoader(properties.twelfth_column, properties.twelfth_column.length());
 }   
   
 if (properties.use_thirteenth_column) {
-    var listOfExtractedValuesThirteenthColumn = listLoader(properties.thirteenth_column, properties.thirteenth_column.length(), properties.field_position_thirteenth_column);
+    instance.data.listOfExtractedValuesThirteenthColumn = listLoader(properties.thirteenth_column, properties.thirteenth_column.length());
 }   
   
 if (properties.use_fourteenth_column) {
-    var listOfExtractedValuesFourteenthColumn = listLoader(properties.fourteenth_column, properties.fourteenth_column.length(), properties.field_position_fourteenth_column);
+    instance.data.listOfExtractedValuesFourteenthColumn = listLoader(properties.fourteenth_column, properties.fourteenth_column.length());
 }   
   
 if (properties.use_fifteenth_column) {
-    var listOfExtractedValuesFifteenthColumn = listLoader(properties.fifteenth_column, properties.fifteenth_column.length(), properties.field_position_fifteenth_column);
+    instance.data.listOfExtractedValuesFifteenthColumn = listLoader(properties.fifteenth_column, properties.fifteenth_column.length());
 }   
   
 if (properties.use_sixteenth_column) {
-    var listOfExtractedValuesSixteenthColumn = listLoader(properties.sixteenth_column, properties.sixteenth_column.length(), properties.field_position_sixteenth_column);
+    instance.data.listOfExtractedValuesSixteenthColumn = listLoader(properties.sixteenth_column, properties.sixteenth_column.length());
 }   
   
 if (properties.use_seventeenth_column) {
-    var listOfExtractedValuesSeventeenthColumn = listLoader(properties.seventeenth_column, properties.seventeenth_column.length(), properties.field_position_seventeenth_column);
+    instance.data.listOfExtractedValuesSeventeenthColumn = listLoader(properties.seventeenth_column, properties.seventeenth_column.length());
 } 
   
 if (properties.use_eighteenth_column) {
-    var listOfExtractedValuesEighteenthColumn = listLoader(properties.eighteenth_column, properties.eighteenth_column.length(), properties.field_position_eighteenth_column);
+    instance.data.listOfExtractedValuesEighteenthColumn = listLoader(properties.eighteenth_column, properties.eighteenth_column.length());
 }   
   
 if (properties.use_nineteenth_column) {
-    var listOfExtractedValuesNineteenthColumn = listLoader(properties.nineteenth_column, properties.nineteenth_column.length(), properties.field_position_nineteenth_column);
+    instance.data.listOfExtractedValuesNineteenthColumn = listLoader(properties.nineteenth_column, properties.nineteenth_column.length());
 }   
   
 if (properties.use_twentieth_column) {
-    var listOfExtractedValuesTwentiethColumn = listLoader(properties.twentieth_column, properties.twentieth_column.length(), properties.field_position_twentieth_column);
+    instance.data.listOfExtractedValuesTwentiethColumn = listLoader(properties.twentieth_column, properties.twentieth_column.length());
 }   
     
 // auxiliary functions for the transposition incoming!
@@ -189,7 +141,7 @@ if (instance.data.composeInMe === undefined) {
 											}
   
 // here we capture whatever the user (app maker) has inputed into the workflow actions into an objects
-if (properties.tableStyle === undefined) {
+if (properties.tableStyle === undefined || properties.tableStyle === null) {
 												properties.tableStyle = ""; 
 											}  
 let definedStyleForTable = properties.tableStyle.replace(/\W/g, ''); // small regex to remove any undesirable characters from style name inputed by app maker
@@ -206,82 +158,82 @@ let tableBodyTransposed = [];
 	
   
 // now we push the acquired array(s) inside the "body:" main array to create a row with each array (to later be transposed into a column)  
-tableBody.push(listOfExtractedValuesFirstColumn); 
+tableBody.push(instance.data.listOfExtractedValuesFirstColumn); 
 	
 if (properties.use_second_column) {	
-	tableBody.push(listOfExtractedValuesSecondColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesSecondColumn); 
 }
 
 if (properties.use_third_column) {	
-	tableBody.push(listOfExtractedValuesThirdColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesThirdColumn); 
 }  
   
 if (properties.use_fourth_column) {	
-	tableBody.push(listOfExtractedValuesFourthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesFourthColumn); 
 }  
   
 if (properties.use_fifth_column) {	
-	tableBody.push(listOfExtractedValuesFifthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesFifthColumn); 
 }  
   
 if (properties.use_sixth_column) {	
-	tableBody.push(listOfExtractedValuesSixthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesSixthColumn); 
 }  
   
 if (properties.use_seventh_column) {	
-	tableBody.push(listOfExtractedValuesSeventhColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesSeventhColumn); 
 }  
   
 if (properties.use_eighth_column) {	
-	tableBody.push(listOfExtractedValuesEighthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesEighthColumn); 
 }  
   
 if (properties.use_ninth_column) {	
-	tableBody.push(listOfExtractedValuesNinthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesNinthColumn); 
 }  
   
 if (properties.use_tenth_column) {	
-	tableBody.push(listOfExtractedValuesTenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesTenthColumn); 
 }  
   
 if (properties.use_eleventh_column) {	
-	tableBody.push(listOfExtractedValuesEleventhColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesEleventhColumn); 
 }  
   
 if (properties.use_twelfth_column) {	
-	tableBody.push(listOfExtractedValuesTwelfthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesTwelfthColumn); 
 }  
   
 if (properties.use_thirteenth_column) {	
-	tableBody.push(listOfExtractedValuesThirteenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesThirteenthColumn); 
 }  
   
 if (properties.use_fourteenth_column) {	
-	tableBody.push(listOfExtractedValuesFourteenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesFourteenthColumn); 
 }  
   
 if (properties.use_fifteenth_column) {	
-	tableBody.push(listOfExtractedValuesFifteenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesFifteenthColumn); 
 }  
   
 if (properties.use_sixteenth_column) {	
-	tableBody.push(listOfExtractedValuesSixteenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesSixteenthColumn); 
 }  
   
 if (properties.use_seventeenth_column) {	
-	tableBody.push(listOfExtractedValuesSeventeenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesSeventeenthColumn); 
 }  
   
 if (properties.use_eighteenth_column) {	
-	tableBody.push(listOfExtractedValuesEighteenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesEighteenthColumn); 
 }  
   
 if (properties.use_nineteenth_column) {	
-	tableBody.push(listOfExtractedValuesNineteenthColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesNineteenthColumn); 
 }  
   
 if (properties.use_twentieth_column) {	
-	tableBody.push(listOfExtractedValuesTwentiethColumn); 
+	tableBody.push(instance.data.listOfExtractedValuesTwentiethColumn); 
 }  
   
 // here we fill in blank elements to the table so it becomes a square matrix and doesn't crashes (pdfmake only likes square matrices!)
@@ -340,7 +292,7 @@ tableBody = tableBodyTransposed.map(createBlanks);
 var useHeaderRow = 0; // in case a header row isn't used, this won't make the first row be repeated on other pages that the table may extend to.
   
 if (properties.table_uses_header_row) {
-    if (properties.header_style === undefined) {
+    if (properties.header_style === undefined || properties.header_style === null) {
 												properties.header_style = ""; 
 											}  
 	var useHeaderRow = 1; // this will make the first row be repeated in the other pages the table also extends to.

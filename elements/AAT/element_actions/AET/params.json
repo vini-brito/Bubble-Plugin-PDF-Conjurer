@@ -5,9 +5,10 @@
         "AEV": {
             "caption": "Multi Column Name",
             "doc": "This won't be shown in the pdf. This is only an internal reference so you type this same name when you want to insert elements inside this multi column. Tables, images and text are insertable. Note that inserted elements must be between the Start and End actions.",
-            "editor": "StaticText",
+            "editor": "DynamicValue",
             "name": "multiColumnName",
-            "rank": 0
+            "rank": 0,
+            "value": "text"
         },
         "AEW": {
             "caption": "Page break",

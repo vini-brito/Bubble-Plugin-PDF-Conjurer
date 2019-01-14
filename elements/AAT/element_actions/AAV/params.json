@@ -14,38 +14,43 @@
         "AAc": {
             "caption": "Style",
             "doc": "",
-            "editor": "StaticText",
+            "editor": "DynamicValue",
             "name": "textStyles",
             "optional": true,
-            "rank": 1
+            "rank": 1,
+            "value": "text"
         },
         "AAn": {
             "caption": "Left Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "left_margin",
-            "rank": 4
+            "rank": 4,
+            "value": "number"
         },
         "AAo": {
             "caption": "Top Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "top_margin",
-            "rank": 5
+            "rank": 5,
+            "value": "number"
         },
         "AAp": {
             "caption": "Right Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "right_margin",
-            "rank": 6
+            "rank": 6,
+            "value": "number"
         },
         "AAq": {
             "caption": "Bottom Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "bottom_margin",
-            "rank": 7
+            "rank": 7,
+            "value": "number"
         },
         "ABC": {
             "caption": "Below you will be able to set extra margins for your text element. Leave the box unchecked for a default display. (Will ignore any numbers below)",

@@ -5,9 +5,10 @@
         "AEY": {
             "caption": "Multi Column Name",
             "doc": "This won't be shown in the pdf. Type in the multi column that you want to end here. Note that inserted elements must be between the Start and End actions. ",
-            "editor": "StaticText",
+            "editor": "DynamicValue",
             "name": "multiColumnName",
-            "rank": 0
+            "rank": 0,
+            "value": "text"
         }
     }
 }

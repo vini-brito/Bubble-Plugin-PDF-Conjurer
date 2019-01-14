@@ -4,15 +4,17 @@
     "fields": {
         "AAe": {
             "caption": "Style name",
-            "editor": "StaticText",
+            "editor": "DynamicValue",
             "name": "name",
-            "rank": 0
+            "rank": 0,
+            "value": "text"
         },
         "AAf": {
             "caption": "Font Size",
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "fontSize",
-            "rank": 1
+            "rank": 1,
+            "value": "number"
         },
         "AAg": {
             "caption": "Bold",

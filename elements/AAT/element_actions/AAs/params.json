@@ -23,9 +23,10 @@
         "ABD": {
             "caption": "Page margin left",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "page_margin_left",
-            "rank": 4
+            "rank": 4,
+            "value": "number"
         },
         "ABE": {
             "caption": "Below you will be able to set custom margin sizes for your page. Leave the box unchecked for default. (Will ignore any numbers below)",
@@ -36,23 +37,26 @@
         "ABF": {
             "caption": "Page margin top",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "page_margin_top",
-            "rank": 5
+            "rank": 5,
+            "value": "number"
         },
         "ABG": {
             "caption": "Page margin right",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "page_margin_right",
-            "rank": 6
+            "rank": 6,
+            "value": "number"
         },
         "ABH": {
             "caption": "Page margin bottom",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "page_margin_bottom",
-            "rank": 7
+            "rank": 7,
+            "value": "number"
         },
         "ABL": {
             "caption": "Set custom margins?",

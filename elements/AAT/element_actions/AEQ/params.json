@@ -14,9 +14,10 @@
         "AES": {
             "caption": "Image name",
             "doc": "You must provide a name for the image, because it will be its reference. Next time you use this same image, only type its name, no need to input an image below.",
-            "editor": "StaticText",
+            "editor": "DynamicValue",
             "name": "image_name",
-            "rank": 0
+            "rank": 0,
+            "value": "text"
         },
         "AEX": {
             "caption": "Page break",
@@ -45,18 +46,20 @@
         "AEj": {
             "caption": "Image width",
             "doc": "You can leave these empty, then it will use the image's original size. Specify only width and the image will scale proportionaly, specify both width and height and the image will distort to fit.",
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "image_width",
             "optional": true,
-            "rank": 3
+            "rank": 3,
+            "value": "number"
         },
         "AEk": {
             "caption": "Image height",
             "doc": "You can leave these empty, then it will use the image's original size. Specify only width and the image will scale proportionaly, specify both width and height and the image will distort to fit.",
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "image_height",
             "optional": true,
-            "rank": 4
+            "rank": 4,
+            "value": "number"
         },
         "AFD": {
             "caption": "Use image custom margins?",
@@ -74,30 +77,34 @@
         "AFF": {
             "caption": "Left Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "left_margin",
-            "rank": 9
+            "rank": 9,
+            "value": "number"
         },
         "AFG": {
             "caption": "Top Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "top_margin",
-            "rank": 10
+            "rank": 10,
+            "value": "number"
         },
         "AFH": {
             "caption": "Right Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "right_margin",
-            "rank": 11
+            "rank": 11,
+            "value": "number"
         },
         "AFI": {
             "caption": "Bottom Margin",
             "default_val": 0,
-            "editor": "StaticNumber",
+            "editor": "DynamicValue",
             "name": "bottom_margin",
-            "rank": 12
+            "rank": 12,
+            "value": "number"
         },
         "AFc": {
             "caption": "Is this element being put into the footer?",
